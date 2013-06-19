@@ -28,6 +28,16 @@ class IService(form.Schema, IImageScaleTraversable):
     """
     Online Community and Services
     """
-    pass
 
+    title = schema.TextLine(title=u'Name', 
+                         description=u'Name of service.')
 
+    description = schema.Text(title=u'Description',
+                                  description=u'Brief description '
+                                  'of service.'
+                                  )
+
+    economy = schema.Choice(
+        title=_(u'Economy'),
+        vocabulary = "ploneun.vocabularies.countries.asiapacific"
+    )
